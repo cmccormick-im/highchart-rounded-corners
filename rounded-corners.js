@@ -31,10 +31,10 @@
                 y = shapeArgs.y;
 
             // Get the radius
-            var rTopLeft = rel(options.borderRadiusTopLeft || 0, w),
-                rTopRight = rel(options.borderRadiusTopRight || 0, w),
-                rBottomRight = rel(options.borderRadiusBottomRight || 0, w),
-                rBottomLeft = rel(options.borderRadiusBottomLeft || 0, w);
+            var rTopLeft = rel(y > 0 ? options.borderRadiusTopLeft : 0, w),
+                rTopRight = rel(y > 0 ? options.borderRadiusTopRight : 0, w),
+                rBottomRight = rel(y < 0 ? options.borderRadiusBottomRight : 0, w),
+                rBottomLeft = rel(y < 0 ? options.borderRadiusBottomLeft : 0, w);
         
             if (rTopLeft || rTopRight || rBottomRight || rBottomLeft) {
                 var maxR = Math.min(w, h) / 2
